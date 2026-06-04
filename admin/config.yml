@@ -1,3 +1,5 @@
+locale: es
+
 backend:
   name: git-gateway
   branch: main
@@ -13,6 +15,7 @@ collections:
         name: links
         file: data/links.json
         format: json
+        description: Cambia los links principales del sitio.
         fields:
           - label: Link De Calendly
             name: calendlyUrl
@@ -27,9 +30,10 @@ collections:
         name: servicios
         file: data/services.json
         format: json
+        description: Edita nombres, precios, textos y botones de los servicios.
         fields:
           - label: Lista De Servicios
-            name: servicios
+            name: services
             widget: list
             summary: '{{fields.title}} - {{fields.price}}'
             fields:
@@ -76,6 +80,7 @@ collections:
         name: galeria
         file: data/gallery.json
         format: json
+        description: Sube o reemplaza las imagenes principales de la galeria.
         fields:
           - label: Imagenes
             name: gallery
@@ -98,6 +103,7 @@ collections:
         name: resenas
         file: data/reviews.json
         format: json
+        description: Edita las reseñas que aparecen en la pagina.
         fields:
           - label: Lista De Reseñas
             name: reviews
