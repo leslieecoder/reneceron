@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Osiris Damas – Makeup Artist | Salt Lake City, Utah</title>
-<meta name="description" content="Maquillaje profesional en Salt Lake City. Soft Makeup, Standard HD y Airbrush para novias, graduadas y eventos. Agenda tu cita hoy.">
+<meta name="description" content="Maquillaje profesional en Salt Lake City. Soft Makeup, Full Glam HD y Bridal Makeup para novias y eventos especiales. Agenda tu cita hoy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -112,7 +112,8 @@ section{padding:6rem 7vw}
 .badge{position:absolute;top:1.4rem;right:1.4rem;background:var(--gold);color:#fff;font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;border-radius:20px}
 .card-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.4rem;background:linear-gradient(135deg,var(--blush2),rgba(229,172,15,.2))}
 .card-tag{font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
-.card h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--plum);margin-bottom:.9rem;line-height:1.2}
+.card h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--plum);margin-bottom:.35rem;line-height:1.2}
+.card-price{font-size:1.15rem;font-weight:700;color:var(--fuchsia);margin-bottom:.95rem}
 .card p{font-family:'Cormorant Garamond',serif;font-size:1.03rem;line-height:1.75;color:var(--mid);font-weight:300;flex:1}
 .card-perks{margin:1.3rem 0;display:flex;flex-direction:column;gap:.45rem}
 .card-perks li{display:flex;align-items:center;gap:.6rem;font-size:.77rem;color:var(--mid);list-style:none}
@@ -139,11 +140,11 @@ section{padding:6rem 7vw}
 #galeria .overline{color:var(--blush)}
 .gallery-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
   gap: 20px;
   padding: 0 5px 5px;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .gal-item {
@@ -183,6 +184,7 @@ section{padding:6rem 7vw}
 .author-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--fuchsia));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.82rem;flex-shrink:0}
 .author-name{font-weight:600;font-size:.83rem;color:var(--plum)}
 .author-event{font-size:.7rem;color:var(--mid)}
+.reviews-cta{text-align:center;margin-top:2rem}
  
 /* CTA BANNER */
 #cta-banner{background:linear-gradient(135deg,var(--plum) 0%,var(--fuchsia) 100%);padding:6rem 7vw;text-align:center;position:relative;overflow:hidden}
@@ -226,6 +228,7 @@ section{padding:6rem 7vw}
 }
 .booking-form h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--plum);margin-bottom:.3rem}
 .form-sub{font-size:.78rem;color:var(--mid);margin-bottom:1.8rem}
+.booking-cta-copy{font-size:.82rem;color:var(--mid);margin:-.3rem 0 .9rem;line-height:1.6}
 .form-row{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -363,7 +366,7 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
 <!-- FAB -->
 <div class="fab">
   <div class="fab-pulse"></div>
-  <a href="#agendar" class="fab-btn">✦ Agendar Cita</a>
+  <a href="#agendar" class="fab-btn" data-calendly-link>✦ Agendar Cita</a>
 </div>
  
 <!-- NAV -->
@@ -374,7 +377,7 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
     <a href="#galeria">Galería</a>
     <a href="#testimonios">Reseñas</a>
     <a href="#faq">FAQ</a>
-    <a href="#agendar" class="nav-cta">Agendar Cita</a>
+    <a href="#agendar" class="nav-cta" data-calendly-link>Agendar Cita</a>
   </div>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -389,9 +392,9 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
       <em>Osiris</em>
       <strong>DAMAS</strong>
     </h1>
-    <p class="hero-sub">Maquillaje profesional que realza tu belleza única. Soft, HD y Airbrush — el look perfecto para cada momento especial.</p>
+    <p class="hero-sub">Maquillaje profesional que realza tu belleza única. Soft Makeup, Full Glam HD y Bridal Makeup para cada momento especial.</p>
     <div class="hero-actions">
-      <a href="#agendar" class="btn-primary">✦ Agendar mi cita</a>
+      <a href="#agendar" class="btn-primary" data-calendly-link>✦ Agendar mi cita</a>
       <a href="#servicios" class="btn-ghost">Ver servicios</a>
     </div>
     <div class="hero-proof">
@@ -415,8 +418,8 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
         <img src="assets/hero-image.png" alt="Osiris Damas" style="width:100%;height:100%;object-fit:cover;display:block;" />
       </div>
       <div class="hero-chip hero-chip-1">
-        <img src="assets/icons/1.png" alt="Airbrush Icon" class="chip-icon" style="width:1.6rem;height:1.6rem;object-fit:cover;border-radius:50%;" />
-        <div><strong style="color:var(--plum);font-size:.76rem">Airbrush</strong><span class="chip-label">Prueba de agua</span></div>
+        <img src="assets/icons/1.png" alt="Bridal Makeup Icon" class="chip-icon" style="width:1.6rem;height:1.6rem;object-fit:cover;border-radius:50%;" />
+        <div><strong style="color:var(--plum);font-size:.76rem">Bridal Makeup</strong><span class="chip-label">Larga duración</span></div>
       </div>
       <div class="hero-chip hero-chip-2">
         <span class="chip-icon" style="font-size:1.6rem;line-height:1">⭐</span>
@@ -430,16 +433,16 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
 <div class="ticker">
   <div class="ticker-track">
     <span class="ticker-item"><span class="ticker-dot"></span>Soft Makeup</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Standard HD</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Airbrush</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Full Glam HD</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Bridal Makeup</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Novias</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Graduaciones</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Prom</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Eventos Especiales</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Osiris Damas</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Soft Makeup</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Standard HD</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Airbrush</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Full Glam HD</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Bridal Makeup</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Novias</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Graduaciones</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Prom</span>
@@ -455,45 +458,7 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
     <h2>Elige entre <em>tres tipos</em> de maquillaje</h2>
     <p>Cada look diseñado para ti, tu piel, tu evento y tu esencia.</p>
   </div>
-  <div class="cards">
-    <div class="card reveal delay-1">
-      <div class="card-icon"><img src="assets/icons/3.png" alt="Soft Makeup Icon" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" /></div>
-      <p class="card-tag">Natural · Fresco · Delicado</p>
-      <h3>Soft Makeup</h3>
-      <p>El Soft Makeup es un maquillaje con acabado natural. Este tipo de maquillaje es de baja cobertura y un look de sombras natural de ojos.</p>
-      <ul class="card-perks">
-        <li>Look natural sin pesadez</li>
-        <li>Ideal para el día a día y fotos</li>
-        <li>Efecto second-skin ligero</li>
-      </ul>
-      <a class="btn-book" href="#agendar">✦ Reservar Soft Makeup</a>
-    </div>
-    <div class="card featured reveal delay-2">
-      <span class="badge">Más popular</span>
-      <div class="card-icon"><img src="assets/icons/4.png" alt="Standard HD Icon" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" /></div>
-      <p class="card-tag">Impecable · Duradero · HD</p>
-      <h3>Maquillaje Standard HD</h3>
-      <p>El Maquillaje Standard HD te ayuda a lucir impecable en fotografías y eventos. Acabado duradero especializado para tu tipo de piel y la forma de tus ojos.</p>
-      <ul class="card-perks">
-        <li>Cobertura personalizada por piel</li>
-        <li>Larga duración para eventos</li>
-        <li>Fotogénico y de alta definición</li>
-      </ul>
-      <a class="btn-book" href="#agendar">✦ Reservar Standard HD</a>
-    </div>
-    <div class="card reveal delay-3">
-      <div class="card-icon"><img src="assets/icons/5.png" alt="Airbrush Icon" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" /></div>
-      <p class="card-tag">Novias · Graduadas · Prom</p>
-      <h3>Airbrush Makeup</h3>
-      <p>El Airbrush Makeup utiliza el aerógrafo para crear una capa de maquillaje fina, cubriente, duradera y a prueba de agua. Ideal para novias, graduadas y proms.</p>
-      <ul class="card-perks">
-        <li>100% a prueba de agua y lágrimas</li>
-        <li>Ultra ligero, no se siente en piel</li>
-        <li>Duración de 12+ horas</li>
-      </ul>
-      <a class="btn-book" href="#agendar">✦ Reservar Airbrush</a>
-    </div>
-  </div>
+  <div class="cards" id="services-list"></div>
 </section>
  
 <!-- PROCESO -->
@@ -507,7 +472,7 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
     <div class="step reveal delay-1">
       <div class="step-num">1</div>
       <h4>Elige tu servicio</h4>
-      <p>Soft, Standard HD o Airbrush. Te orientamos para elegir el ideal.</p>
+      <p>Soft Makeup, Full Glam HD o Bridal Makeup. Te orientamos para elegir el ideal.</p>
     </div>
     <div class="step reveal delay-2">
       <div class="step-num">2</div>
@@ -534,55 +499,23 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
     <h2>Trabajos <em>reales</em>, clientas reales</h2>
     <p>Cada look es único, cada mujer es especial.</p>
   </div>
-      <div class="gallery-grid">
-        <div class="gal-item"><img src="assets/makeup1.jpeg" alt="Novia 2025" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Novia 2025</span></div>
-        <div class="gal-item"><img src="assets/makeup2.jpeg" alt="Standard HD" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Standard HD</span></div>
-        <div class="gal-item"><img src="assets/makeup3.jpeg" alt="Soft Makeup" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Soft Makeup</span></div>
-        <div class="gal-item"><img src="assets/makeup4.jpeg" alt="Airbrush" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Airbrush</span></div>
-        <div class="gal-item"><img src="assets/makeup5.png" alt="Prom 2025" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Prom 2025</span></div>
-        <div class="gal-item"><img src="assets/makeup6.png" alt="Soft Look" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Soft Look</span></div>
-        <div class="gal-item"><img src="assets/makeup7.png" alt="Evento" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Evento</span></div>
-        <div class="gal-item"><img src="assets/makeup8.png" alt="Graduación" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Graduación</span></div>
-        <div class="gal-item"><img src="assets/makeup9.png" alt="Editorial" style="width:100%;height:100%;object-fit:cover;display:block;"><span class="gal-label">Editorial</span></div>
-      </div>
+      <div class="gallery-grid" id="gallery-list"></div>
   <div class="gallery-cta">
-    <a href="https://instagram.com/osirisdamas" target="_blank" class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Ver más en Instagram →</a>
-    <a href="#agendar" class="btn-primary">✦ Quiero mi look</a>
+    <a href="https://instagram.com/osirisdamas.mua" target="_blank" class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Ver más en Instagram →</a>
+    <a href="#agendar" class="btn-primary" data-calendly-link>✦ Quiero mi look</a>
   </div>
 </section>
  
 <!-- TESTIMONIOS -->
 <section id="testimonios">
   <div class="section-header reveal">
-    <span class="overline">Reseñas</span>
-    <h2>Lo que dicen mis <em>clientas</em></h2>
-    <p>Más de 200 mujeres ya confiaron en mí para su día especial.</p>
+    <span class="overline">Google Reviews</span>
+    <h2>Lo que dicen en <em>Google</em></h2>
+    <p>Esta sección también se puede actualizar desde un solo archivo de contenido.</p>
   </div>
-  <div class="testi-grid">
-    <div class="testi reveal delay-1">
-      <div class="testi-stars">★★★★★</div>
-      <p>Osiris es increíble. Me hizo el maquillaje para mi boda y duró todo el día y la noche. Lloré de felicidad y ni se corrió. ¡La recomiendo al 100%!</p>
-      <div class="testi-author">
-        <div class="author-avatar">A</div>
-        <div><div class="author-name">Andrea Mejía</div><div class="author-event">Boda · Airbrush Makeup</div></div>
-      </div>
-    </div>
-    <div class="testi reveal delay-2">
-      <div class="testi-stars">★★★★★</div>
-      <p>Me hizo el maquillaje para mi prom y quedé hermosísima. Todos me preguntaban quién me maquilló. Definitivamente vuelvo para mi graduación.</p>
-      <div class="testi-author">
-        <div class="author-avatar">S</div>
-        <div><div class="author-name">Sofía Rodríguez</div><div class="author-event">Prom · Standard HD</div></div>
-      </div>
-    </div>
-    <div class="testi reveal delay-3">
-      <div class="testi-stars">★★★★★</div>
-      <p>Pedí el Soft Makeup para una sesión de fotos y quedé enamorada. Natural pero impactante. Osiris tiene un talento increíble.</p>
-      <div class="testi-author">
-        <div class="author-avatar">M</div>
-        <div><div class="author-name">María Fernández</div><div class="author-event">Sesión fotos · Soft Makeup</div></div>
-      </div>
-    </div>
+  <div class="testi-grid" id="reviews-list"></div>
+  <div class="reviews-cta" id="google-reviews-cta" style="display:none">
+    <a id="google-reviews-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-ghost">Ver todas en Google</a>
   </div>
 </section>
  
@@ -590,7 +523,7 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
 <section id="cta-banner">
   <h2>¿Lista para <em>brillar</em>?</h2>
   <p>Agenda tu cita hoy y asegura tu fecha antes de que se llene el calendario.</p>
-  <a href="#agendar" class="btn-cta-white">✦ Agendar mi cita ahora</a>
+  <a href="#agendar" class="btn-cta-white" data-calendly-link>✦ Agendar mi cita ahora</a>
 </section>
  
 <!-- FAQ -->
@@ -601,9 +534,9 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
   </div>
   <div class="faq-list">
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Con cuánta anticipación debo agendar mi cita?<span class="faq-arrow">+</span></button><div class="faq-a">Se recomienda agendar con al menos 2–4 semanas de anticipación, especialmente para bodas, prom o graduaciones. Los fines de semana se agotan rápido.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuál tipo de maquillaje es el mejor para mi boda?<span class="faq-arrow">+</span></button><div class="faq-a">El Airbrush Makeup es la opción favorita para novias: es 100% a prueba de agua, ultra ligero y dura más de 12 horas. Evaluamos juntas tu tipo de piel para darte la mejor recomendación.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuál tipo de maquillaje es el mejor para mi boda?<span class="faq-arrow">+</span></button><div class="faq-a">Bridal Makeup es la opción ideal para novias que buscan un look elegante, personalizado y de larga duración. Evaluamos juntas tu piel, tu estilo y el tipo de evento para darte la mejor recomendación.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Hacen prueba de maquillaje para bodas?<span class="faq-arrow">+</span></button><div class="faq-a">¡Sí! Las pruebas de maquillaje para novias están disponibles como servicio aparte. Es muy recomendable hacerla 1–2 semanas antes del evento.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto dura una sesión de maquillaje?<span class="faq-arrow">+</span></button><div class="faq-a">Soft Makeup: aprox. 45 min. Standard HD: 60–75 min. Airbrush: 75–90 min. Para novias se reserva tiempo extra para garantizar un resultado perfecto.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto dura una sesión de maquillaje?<span class="faq-arrow">+</span></button><div class="faq-a">Soft Makeup: aprox. 45 min. Full Glam HD: 60–75 min. Bridal Makeup: 75–90 min. Para novias se reserva tiempo extra para garantizar un resultado perfecto.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Tienen servicio a domicilio?<span class="faq-arrow">+</span></button><div class="faq-a">Sí, ofrecemos servicio a domicilio en Salt Lake City y áreas cercanas. Puede aplicar un cargo adicional según la distancia. Consúltanos al agendar.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué métodos de pago aceptan?<span class="faq-arrow">+</span></button><div class="faq-a">Aceptamos efectivo, Venmo, Zelle y tarjetas de crédito/débito. Se requiere depósito para confirmar en fechas especiales y temporada alta.</div></div>
   </div>
@@ -616,8 +549,9 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
     <h2 style="margin-top:.6rem">Hablemos y creemos<br>tu <em>look perfecto</em></h2>
     <p>Llena el formulario o contáctame directamente. Respondo en menos de 24 horas.</p>
     <div class="contact-detail"><div class="icon">📍</div><div><strong>Ubicación</strong><br>Salt Lake City, Utah</div></div>
-    <div class="contact-detail"><div class="icon">📱</div><div><strong>WhatsApp</strong><br>+1 (XXX) XXX-XXXX</div></div>
-    <div class="contact-detail"><div class="icon">📸</div><div><strong>Instagram</strong><br>@osirisdamas</div></div>
+    <div class="contact-detail"><div class="icon">📱</div><div><strong>WhatsApp</strong><br>(801) 885-6188</div></div>
+    <div class="contact-detail"><div class="icon">✉️</div><div><strong>Correo</strong><br>osiris.damas</div></div>
+    <div class="contact-detail"><div class="icon">📸</div><div><strong>Instagram</strong><br>@osirisdamas.mua</div></div>
     <div class="contact-detail"><div class="icon">🕐</div><div><strong>Horario</strong><br>Lunes – Sábado · 9am – 7pm</div></div>
   </div>
  
@@ -625,23 +559,25 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
     <input type="hidden" name="form-name" value="appointment">
     <h3>Agendar Cita</h3>
     <p class="form-sub">Completa el formulario y te contactamos para confirmar.</p>
+    <a href="#agendar" class="btn-primary" data-calendly-link style="justify-content:center">✦ Reservar por Calendly</a>
+    <p class="booking-cta-copy">Si prefieres agendar tu cita al instante, usa Calendly. El formulario sigue disponible si quieres que te contacten primero.</p>
     <div id="form-fields">
       <input type="hidden" name="bot-field">
       <div class="form-row">
         <div class="form-group"><label>Nombre
           <input type="text" name="nombre" placeholder="Tu nombre completo" required></label></div>
         <div class="form-group"><label>Teléfono / WhatsApp
-          <input type="tel" name="telefono" placeholder="+1 (XXX) XXX-XXXX" required></label></div>
+          <input type="tel" name="telefono" placeholder="(801) 885-6188" required></label></div>
       </div>
       <div class="form-group"><label>Correo electrónico
-        <input type="email" name="email" placeholder="tu@email.com" required></label></div>
+        <input type="email" name="email" placeholder="osiris.damas" required></label></div>
       <div class="form-row">
         <div class="form-group"><label>Tipo de servicio
           <select name="servicio" required>
             <option value="">Selecciona...</option>
             <option>Soft Makeup</option>
-            <option>Maquillaje Standard HD</option>
-            <option>Airbrush Makeup</option>
+            <option>Full Glam HD</option>
+            <option>Bridal Makeup</option>
             <option>No sé, necesito orientación</option>
           </select></label></div>
         <div class="form-group"><label>Tipo de evento
@@ -673,9 +609,9 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
       <p class="footer-tagline">Makeup Artist · Salt Lake City, Utah</p>
       <p class="footer-desc">Maquillaje profesional que realza tu belleza única. Especializada en novias, graduaciones, prom y eventos especiales en Utah.</p>
       <div class="footer-social">
-        <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+        <a href="https://instagram.com/osirisdamas.mua" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">📸</a>
         <a href="#" class="social-btn" aria-label="TikTok">🎵</a>
-        <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+        <a href="https://wa.me/18018856188" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">💬</a>
         <a href="#" class="social-btn" aria-label="Facebook">👤</a>
       </div>
     </div>
@@ -683,8 +619,8 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
       <h5>Servicios</h5>
       <ul>
         <li><a href="#servicios">Soft Makeup</a></li>
-        <li><a href="#servicios">Maquillaje Standard HD</a></li>
-        <li><a href="#servicios">Airbrush Makeup</a></li>
+        <li><a href="#servicios">Full Glam HD</a></li>
+        <li><a href="#servicios">Bridal Makeup</a></li>
         <li><a href="#agendar">Prueba de novias</a></li>
         <li><a href="#agendar">Servicio a domicilio</a></li>
       </ul>
@@ -707,6 +643,101 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
 </footer>
  
 <script>
+let siteContent={services:[],gallery:[],googleReviews:{items:[]}};
+let calendlyHref='#agendar';
+
+function renderServices(){
+  const target=document.getElementById('services-list');
+  if(!target)return;
+  target.innerHTML=siteContent.services.map((service,index)=>`
+    <div class="card ${service.featured?'featured':''} reveal delay-${Math.min(index+1,3)}">
+      ${service.badge?`<span class="badge">${service.badge}</span>`:''}
+      <div class="card-icon"><img src="${service.icon}" alt="${service.iconAlt}" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" /></div>
+      <p class="card-tag">${service.tag}</p>
+      <h3>${service.title}</h3>
+      <div class="card-price">${service.price}</div>
+      <p>${service.description}</p>
+      <ul class="card-perks">
+        ${service.perks.map(perk=>`<li>${perk}</li>`).join('')}
+      </ul>
+      <a class="btn-book" href="${calendlyHref}" target="_blank" rel="noopener noreferrer">${service.buttonText}</a>
+    </div>
+  `).join('');
+}
+
+function renderGallery(){
+  const target=document.getElementById('gallery-list');
+  if(!target)return;
+  target.innerHTML=siteContent.gallery.map(item=>`
+    <div class="gal-item">
+      <img src="${item.src}" alt="${item.alt}" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <span class="gal-label">${item.label}</span>
+    </div>
+  `).join('');
+}
+
+function renderReviews(){
+  const target=document.getElementById('reviews-list');
+  const cta=document.getElementById('google-reviews-cta');
+  const link=document.getElementById('google-reviews-link');
+  const reviewItems=siteContent.googleReviews&&siteContent.googleReviews.items?siteContent.googleReviews.items:[];
+  if(!target)return;
+  target.innerHTML=reviewItems.map((review,index)=>`
+    <div class="testi reveal delay-${Math.min(index+1,3)}">
+      <div class="testi-stars">★★★★★</div>
+      <p>${review.text}</p>
+      <div class="testi-author">
+        <div class="author-avatar">${review.initials}</div>
+        <div><div class="author-name">${review.name}</div><div class="author-event">${review.event}</div></div>
+      </div>
+    </div>
+  `).join('');
+  if(cta&&link&&siteContent.googleReviews&&siteContent.googleReviews.placeUrl){
+    link.href=siteContent.googleReviews.placeUrl;
+    cta.style.display='block';
+  }
+}
+
+function applyCalendlyLinks(){
+  document.querySelectorAll('[data-calendly-link]').forEach(link=>{
+    link.href=calendlyHref;
+    if(calendlyHref!=='#agendar'){
+      link.target='_blank';
+      link.rel='noopener noreferrer';
+    }
+  });
+}
+
+function initializeEditableContent(){
+  calendlyHref=siteContent.calendlyUrl||'#agendar';
+  renderServices();
+  renderGallery();
+  renderReviews();
+  applyCalendlyLinks();
+}
+
+Promise.all([
+  fetch('data/links.json').then(response=>response.json()),
+  fetch('data/services.json').then(response=>response.json()),
+  fetch('data/gallery.json').then(response=>response.json()),
+  fetch('data/reviews.json').then(response=>response.json())
+])
+  .then(([linksData,servicesData,galleryData,reviewsData])=>{
+    siteContent={
+      calendlyUrl:linksData.calendlyUrl,
+      services:servicesData.services||[],
+      gallery:galleryData.gallery||[],
+      googleReviews:{
+        placeUrl:linksData.googleReviewsUrl||'',
+        items:reviewsData.reviews||[]
+      }
+    };
+    initializeEditableContent();
+  })
+  .catch(()=>{
+    initializeEditableContent();
+  });
+
 // CURSOR
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
 let mx=0,my=0,rx=0,ry=0;

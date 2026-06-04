@@ -1,0 +1,24 @@
+{
+  "gallery": [
+    {
+    "src": "assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02.jpeg",
+    "alt": "Maquillaje look 1",
+    "label": "Look 1"
+    },
+    {
+    "src": "assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%281%29.jpeg",
+    "alt": "Maquillaje look 2",
+    "label": "Look 2"
+    },
+    {
+    "src": "assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%282%29.jpeg",
+    "alt": "Maquillaje look 3",
+    "label": "Look 3"
+    },
+    {
+    "src": "assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%283%29.jpeg",
+    "alt": "Maquillaje look 4",
+    "label": "Look 4"
+    }
+  ]
+}

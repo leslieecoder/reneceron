@@ -1,0 +1,118 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: links
+    label: Links
+    files:
+      - label: Links Del Sitio
+        name: links
+        file: data/links.json
+        format: json
+        fields:
+          - label: Link De Calendly
+            name: calendlyUrl
+            widget: string
+          - label: Link De Google Reviews
+            name: googleReviewsUrl
+            widget: string
+  - name: servicios
+    label: Servicios
+    files:
+      - label: Servicios
+        name: servicios
+        file: data/services.json
+        format: json
+        fields:
+          - label: Lista De Servicios
+            name: servicios
+            widget: list
+            summary: '{{fields.title}} - {{fields.price}}'
+            fields:
+              - label: Icono
+                name: icon
+                widget: image
+              - label: Texto Alternativo Del Icono
+                name: iconAlt
+                widget: string
+              - label: Etiqueta
+                name: tag
+                widget: string
+              - label: Titulo
+                name: title
+                widget: string
+              - label: Precio
+                name: price
+                widget: string
+              - label: Descripcion
+                name: description
+                widget: text
+              - label: Beneficios
+                name: perks
+                widget: list
+                field:
+                  label: Beneficio
+                  name: beneficio
+                  widget: string
+              - label: Texto Del Boton
+                name: buttonText
+                widget: string
+              - label: Destacado
+                name: featured
+                widget: boolean
+                required: false
+              - label: Badge
+                name: badge
+                widget: string
+                required: false
+  - name: galeria
+    label: Galeria
+    files:
+      - label: Galeria Principal
+        name: galeria
+        file: data/gallery.json
+        format: json
+        fields:
+          - label: Imagenes
+            name: gallery
+            widget: list
+            summary: '{{fields.label}}'
+            fields:
+              - label: Imagen
+                name: src
+                widget: image
+              - label: Texto Alternativo
+                name: alt
+                widget: string
+              - label: Titulo Corto
+                name: label
+                widget: string
+  - name: resenas
+    label: Reseñas
+    files:
+      - label: Reseñas Del Sitio
+        name: resenas
+        file: data/reviews.json
+        format: json
+        fields:
+          - label: Lista De Reseñas
+            name: reviews
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - label: Nombre
+                name: name
+                widget: string
+              - label: Iniciales
+                name: initials
+                widget: string
+              - label: Evento
+                name: event
+                widget: string
+              - label: Texto De La Reseña
+                name: text
+                widget: text
