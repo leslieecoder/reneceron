@@ -26,62 +26,71 @@
     </div>
     <div id="admin-status" class="admin-status">Cargando acceso...</div>
   </div>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js" defer></script>
   <script>
-    window.addEventListener('load',()=>{
+    document.addEventListener('DOMContentLoaded',()=>{
       const status=document.getElementById('admin-status');
       const openButton=document.getElementById('open-identity');
       const reloadButton=document.getElementById('reload-admin');
+      const hash=window.location.hash||'';
+      const hasIdentityToken=/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash);
 
       function setStatus(message){
         if(status)status.textContent=message;
+      }
+
+      function openIdentity(){
+        if(window.netlifyIdentity){
+          window.netlifyIdentity.open();
+        }else{
+          setStatus('Netlify Identity todavia no carga. Espera 2 segundos y vuelve a intentar.');
+        }
       }
 
       reloadButton.addEventListener('click',()=>{
         window.location.reload();
       });
 
-      if(!window.netlifyIdentity){
-        setStatus('Netlify Identity no cargo. Recarga la pagina o revisa Identity en Netlify.');
-        return;
-      }
+      openButton.addEventListener('click',openIdentity);
 
-      const hash=window.location.hash||'';
-      const hasIdentityToken=/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash);
-
-      window.netlifyIdentity.init();
-      openButton.addEventListener('click',()=>window.netlifyIdentity.open());
-
-      if(hasIdentityToken){
-        setStatus('Token detectado. Abriendo acceso...');
-        setTimeout(()=>window.netlifyIdentity.open(),300);
-      }
-
-      window.netlifyIdentity.on('init',user=>{
-        if(user){
-          setStatus('Sesion detectada. Entrando al panel...');
-          window.location.replace('/admin/');
+      function initIdentity(retryCount=0){
+        if(!window.netlifyIdentity){
+          if(retryCount < 20){
+            setStatus('Preparando acceso...');
+            setTimeout(()=>initIdentity(retryCount+1),250);
+          }else{
+            setStatus('Netlify Identity no cargo. Revisa que Identity este activado en Netlify y luego recarga el panel.');
+          }
           return;
         }
 
-        if(!user&&hasIdentityToken){
-          setStatus('Abriendo formulario de acceso...');
-          setTimeout(()=>window.netlifyIdentity.open(),300);
-        }else if(!user){
-          setStatus('Haz clic en "Abrir acceso" para iniciar sesion.');
+        window.netlifyIdentity.init();
+        setStatus(hasIdentityToken ? 'Token detectado. Abriendo acceso...' : 'Haz clic en "Abrir acceso" para iniciar sesion.');
+
+        if(hasIdentityToken){
+          setTimeout(openIdentity,300);
         }
-      });
 
-      window.netlifyIdentity.on('login',()=>{
-        setStatus('Acceso correcto. Entrando al panel...');
-        window.location.replace('/admin/');
-      });
+        window.netlifyIdentity.on('init',user=>{
+          if(user){
+            setStatus('Sesion detectada. Entrando al panel...');
+            window.location.replace('/admin/');
+          }
+        });
 
-      window.netlifyIdentity.on('error',err=>{
-        setStatus(`Error de acceso: ${err.message}`);
-      });
+        window.netlifyIdentity.on('login',()=>{
+          setStatus('Acceso correcto. Entrando al panel...');
+          window.location.replace('/admin/');
+        });
+
+        window.netlifyIdentity.on('error',err=>{
+          setStatus(`Error de acceso: ${err.message}`);
+        });
+      }
+
+      initIdentity();
     });
   </script>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
