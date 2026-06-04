@@ -643,8 +643,62 @@ footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
 </footer>
  
 <script>
-let siteContent={services:[],gallery:[],googleReviews:{items:[]}};
-let calendlyHref='#agendar';
+const fallbackSiteContent={
+  calendlyUrl:'https://calendly.com/osirisdamas-mua/30min',
+  services:[
+    {
+      icon:'assets/icons/3.png',
+      iconAlt:'Soft Makeup Icon',
+      tag:'Natural · Fresco · Luminoso',
+      title:'🌸 Soft Makeup',
+      price:'$110',
+      description:'Un maquillaje fresco y natural que realza tu belleza sin ocultarla. Perfecto para quienes aman una piel luminosa, ligera y elegante.',
+      perks:['Acabado natural y luminoso','Sensación ligera en la piel','Ideal para piel madura'],
+      buttonText:'✦ Reservar Soft Makeup',
+      featured:false
+    },
+    {
+      icon:'assets/icons/4.png',
+      iconAlt:'Full Glam HD Icon',
+      tag:'Glam · Sofisticado · HD',
+      title:'🥂 Full Glam HD',
+      price:'$135',
+      description:'Un look glamuroso y sofisticado diseñado para destacar tus facciones y lucir impecable tanto en persona como en fotografías.',
+      perks:['Cobertura personalizable','Perfecto para fotos y video HD','Técnicas adaptadas para piel madura'],
+      buttonText:'✦ Reservar Full Glam HD',
+      featured:true,
+      badge:'Más popular'
+    },
+    {
+      icon:'assets/icons/5.png',
+      iconAlt:'Bridal Makeup Icon',
+      tag:'Novias · Elegante · Personalizado',
+      title:'👰 Bridal Makeup',
+      price:'$195',
+      description:'Un servicio personalizado para novias que desean verse radiantes, elegantes y seguras en uno de los días más importantes de su vida.',
+      perks:['Consulta personalizada','Larga duración para todo el evento','Diseñado para lucir impecable en persona y en fotografía'],
+      buttonText:'✦ Reservar Bridal Makeup',
+      featured:false
+    }
+  ],
+  gallery:[
+    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02.jpeg',alt:'Maquillaje look 1',label:'Look 1'},
+    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%281%29.jpeg',alt:'Maquillaje look 2',label:'Look 2'},
+    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%282%29.jpeg',alt:'Maquillaje look 3',label:'Look 3'},
+    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%283%29.jpeg',alt:'Maquillaje look 4',label:'Look 4'}
+  ],
+  googleReviews:{
+    placeUrl:'https://www.google.com/search?kgmid=/g/11z525j580&hl=en-US&q=Osiris+Damas+Makeup+Artist&shem=rimspwouoe&shndl=30&source=sh/x/loc/osrp/m1/3&kgs=6ea10d3c159eecc1&utm_source=rimspwouoe,sh/x/loc/osrp/m1/3#lrd=0x874d7fe53f47efe9:0x83ba9cce7504bb18,1,,,,',
+    items:[
+      {name:'Andrea Mejía',initials:'A',event:'Boda · Bridal Makeup',text:'Osiris es increíble. Me hizo el maquillaje para mi boda y duró todo el día y la noche. Lloré de felicidad y ni se corrió. ¡La recomiendo al 100%!'},
+      {name:'Sofía Rodríguez',initials:'S',event:'Prom · Full Glam HD',text:'Me hizo el maquillaje para mi prom y quedé hermosísima. Todos me preguntaban quién me maquilló. Definitivamente vuelvo para mi graduación.'},
+      {name:'María Fernández',initials:'M',event:'Sesión fotos · Soft Makeup',text:'Pedí el Soft Makeup para una sesión de fotos y quedé enamorada. Natural pero impactante. Osiris tiene un talento increíble.'}
+    ]
+  }
+};
+
+let siteContent=JSON.parse(JSON.stringify(fallbackSiteContent));
+let calendlyHref=fallbackSiteContent.calendlyUrl;
 
 function renderServices(){
   const target=document.getElementById('services-list');
@@ -716,27 +770,34 @@ function initializeEditableContent(){
   applyCalendlyLinks();
 }
 
-Promise.all([
-  fetch('data/links.json').then(response=>response.json()),
-  fetch('data/services.json').then(response=>response.json()),
-  fetch('data/gallery.json').then(response=>response.json()),
-  fetch('data/reviews.json').then(response=>response.json())
-])
-  .then(([linksData,servicesData,galleryData,reviewsData])=>{
-    siteContent={
-      calendlyUrl:linksData.calendlyUrl,
-      services:servicesData.services||[],
-      gallery:galleryData.gallery||[],
-      googleReviews:{
-        placeUrl:linksData.googleReviewsUrl||'',
-        items:reviewsData.reviews||[]
-      }
-    };
-    initializeEditableContent();
-  })
-  .catch(()=>{
-    initializeEditableContent();
+function fetchJson(path){
+  return fetch(path).then(response=>{
+    if(!response.ok){
+      throw new Error(`Failed to load ${path}`);
+    }
+    return response.json();
   });
+}
+
+initializeEditableContent();
+
+Promise.allSettled([
+  fetchJson('data/links.json'),
+  fetchJson('data/services.json'),
+  fetchJson('data/gallery.json'),
+  fetchJson('data/reviews.json')
+]).then(([linksResult,servicesResult,galleryResult,reviewsResult])=>{
+  siteContent={
+    calendlyUrl:linksResult.status==='fulfilled' ? (linksResult.value.calendlyUrl||fallbackSiteContent.calendlyUrl) : fallbackSiteContent.calendlyUrl,
+    services:servicesResult.status==='fulfilled' ? (servicesResult.value.services||fallbackSiteContent.services) : fallbackSiteContent.services,
+    gallery:galleryResult.status==='fulfilled' ? (galleryResult.value.gallery||fallbackSiteContent.gallery) : fallbackSiteContent.gallery,
+    googleReviews:{
+      placeUrl:linksResult.status==='fulfilled' ? (linksResult.value.googleReviewsUrl||fallbackSiteContent.googleReviews.placeUrl) : fallbackSiteContent.googleReviews.placeUrl,
+      items:reviewsResult.status==='fulfilled' ? (reviewsResult.value.reviews||fallbackSiteContent.googleReviews.items) : fallbackSiteContent.googleReviews.items
+    }
+  };
+  initializeEditableContent();
+});
 
 // CURSOR
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
