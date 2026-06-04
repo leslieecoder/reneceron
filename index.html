@@ -12,6 +12,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Osiris Damas – Makeup Artist | Salt Lake City, Utah</title>
 <meta name="description" content="Maquillaje profesional en Salt Lake City. Soft Makeup, Full Glam HD y Bridal Makeup para novias y eventos especiales. Agenda tu cita hoy.">
+<script>
+(function redirectIdentityTokenToAdmin(){
+  const hash=window.location.hash||'';
+  if(/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash)){
+    window.location.replace(`${window.location.origin}/admin/${hash}`);
+  }
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
