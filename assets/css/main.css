@@ -660,6 +660,7 @@ select {
 .section-cta .cta-block,
 .section-cta .cta-block p,
 .site-footer,
+.site-footer p,
 .site-footer a,
 .site-footer span {
   color: var(--white);
@@ -906,6 +907,22 @@ select {
   padding-bottom: 28px;
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.footer-logo img {
+  width: min(280px, 100%);
+  height: auto;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
@@ -929,6 +946,14 @@ select {
   display: block;
   margin-top: 6px;
   color: rgba(255, 244, 232, 0.7);
+}
+
+.site-footer p {
+  color: rgba(255, 244, 232, 0.76);
+}
+
+.site-footer a:hover {
+  color: rgba(255, 244, 232, 0.96);
 }
 
 .footer-bottom {
