@@ -1,0 +1,24 @@
+{
+  "gallery": [
+    {
+    "src": "assets/images/gallery/11251.jpg",
+    "alt": "Resultado de microblading en cejas naturales",
+    "label": "Microblading"
+    },
+    {
+    "src": "assets/images/gallery/11256.jpg",
+    "alt": "Resultado de microshading con efecto suave",
+    "label": "Microshading"
+    },
+    {
+    "src": "assets/images/gallery/11267.jpg",
+    "alt": "Resultado de cejas hibridas con definicion intensa",
+    "label": "Cejas Hibridas"
+    },
+    {
+    "src": "assets/images/gallery/11263.jpg",
+    "alt": "Resultado de micropigmentacion de labios",
+    "label": "Labios y Ojos"
+    }
+  ]
+}

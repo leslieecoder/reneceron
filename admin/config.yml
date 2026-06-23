@@ -4,8 +4,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: assets/uploads
-public_folder: /assets/uploads
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
 
 collections:
   - name: links
@@ -13,7 +13,7 @@ collections:
     files:
       - label: Links Del Sitio
         name: links
-        file: data/links.json
+        file: content/site/links.json
         format: json
         description: Cambia los links principales del sitio.
         fields:
@@ -28,7 +28,7 @@ collections:
     files:
       - label: Servicios
         name: servicios
-        file: data/services.json
+        file: content/site/services.json
         format: json
         description: Edita nombres, precios, textos y botones de los servicios.
         fields:
@@ -78,7 +78,7 @@ collections:
     files:
       - label: Galeria Principal
         name: galeria
-        file: data/gallery.json
+        file: content/site/gallery.json
         format: json
         description: Sube o reemplaza las imagenes principales de la galeria.
         fields:
@@ -101,7 +101,7 @@ collections:
     files:
       - label: Reseñas Del Sitio
         name: resenas
-        file: data/reviews.json
+        file: content/site/reviews.json
         format: json
         description: Edita las reseñas que aparecen en la pagina.
         fields:

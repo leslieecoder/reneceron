@@ -1,807 +1,287 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/icons/1.png">
-  <!-- Open Graph image for link sharing -->
-  <meta property="og:image" content="assets/hero.jpeg">
-  <meta property="og:image:type" content="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renne Cerón Microblading | Tours en EUA, México, Guatemala y El Salvador</title>
+  <meta name="description" content="Microblading y micropigmentación profesional con agenda por tours en EUA, México, Guatemala y El Salvador.">
+  <meta property="og:image" content="assets/images/hero/hero.png">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Osiris Damas – Makeup Artist | Salt Lake City, Utah</title>
-<meta name="description" content="Maquillaje profesional en Salt Lake City. Soft Makeup, Full Glam HD y Bridal Makeup para novias y eventos especiales. Agenda tu cita hoy.">
-<script>
-(function redirectIdentityTokenToAdmin(){
-  const hash=window.location.hash||'';
-  if(/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash)){
-    window.location.replace(`${window.location.origin}/admin/${hash}`);
-  }
-})();
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --plum:#820263;--fuchsia:#D90368;--blush:#FFB6D7;--blush2:#fde8f2;
-  --gold:#E5AC0F;--gold-lt:#f7e9b0;--cream:#FDF5F9;--dark:#1a0012;
-  --mid:#5a2050;--white:#FFFFFF;
-  --radius-sm:4px;--radius-md:12px;--radius-lg:24px;
-  --shadow-sm:0 2px 12px rgba(130,2,99,.08);
-  --shadow-md:0 8px 40px rgba(130,2,99,.14);
-  --shadow-lg:0 20px 70px rgba(130,2,99,.22);
-  --t:.3s cubic-bezier(.4,0,.2,1);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;cursor:none}
- 
-/* CURSOR */
-#cursor{position:fixed;width:10px;height:10px;background:var(--fuchsia);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:multiply}
-#cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--fuchsia);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s;opacity:.6}
- 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background var(--t),box-shadow var(--t)}
-nav.scrolled{background:rgba(253,245,249,.9);backdrop-filter:blur(18px);box-shadow:0 2px 24px rgba(130,2,99,.08)}
-.nav-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;color:var(--plum);text-decoration:none}
-.nav-logo span{font-style:normal;font-weight:700}
-.nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color var(--t)}
-.nav-links a:hover{color:var(--fuchsia)}
-.nav-cta{padding:.6rem 1.4rem!important;background:var(--fuchsia)!important;color:#fff!important;border-radius:3px;transition:background var(--t)!important}
-.nav-cta:hover{background:var(--plum)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{width:24px;height:1.5px;background:var(--plum);display:block}
- 
-/* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding-top:80px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 0% 50%,rgba(255,182,215,.55) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 100% 20%,rgba(229,172,15,.12) 0%,transparent 55%);pointer-events:none}
-.hero-text{padding:4rem 3rem 4rem 7vw;position:relative;z-index:1;animation:fadeUp .9s ease both}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:.65rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--fuchsia);margin-bottom:1.5rem}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:28px;height:1px;background:var(--fuchsia);opacity:.5}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,6.5rem);line-height:.93;color:var(--plum);margin-bottom:1.4rem}
-.hero-title em{font-style:italic;display:block;font-size:.68em;font-weight:400}
-.hero-title strong{display:block;font-weight:900;letter-spacing:.04em}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--mid);line-height:1.65;max-width:420px;margin-bottom:2.2rem}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 2.2rem;background:var(--fuchsia);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius-sm);border:none;cursor:pointer;transition:background var(--t),transform var(--t),box-shadow var(--t);box-shadow:0 8px 32px rgba(217,3,104,.35)}
-.btn-primary:hover{background:var(--plum);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 2rem;background:transparent;color:var(--plum);font-size:.72rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(130,2,99,.35);border-radius:var(--radius-sm);cursor:pointer;transition:all var(--t)}
-.btn-ghost:hover{background:var(--plum);color:#fff;border-color:var(--plum);transform:translateY(-3px)}
-.hero-proof{display:flex;align-items:center;gap:1.2rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(130,2,99,.12)}
-.proof-avatars{display:flex}
-.proof-avatars span{width:34px;height:34px;border-radius:50%;border:2px solid #fff;background:linear-gradient(135deg,var(--blush),var(--fuchsia));margin-left:-10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:#fff;font-weight:700}
-.proof-avatars span:first-child{margin-left:0}
-.proof-text{font-size:.76rem;color:var(--mid);line-height:1.5}
-.proof-text strong{color:var(--plum);font-weight:600}
-.proof-stars{color:var(--gold);font-size:.8rem;display:block}
- 
-/* hero visual */
-.hero-visual{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;animation:fadeUp 1s .2s ease both}
-.hero-img-main{width:420px;height:560px;border-radius:var(--radius-md);background:linear-gradient(160deg,#c97ab2 0%,#820263 100%);box-shadow:var(--shadow-lg);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-
-.hero-chip{position:absolute;background:#fff;border-radius:var(--radius-md);padding:.85rem 1.1rem;box-shadow:var(--shadow-md);font-size:.72rem;font-weight:600;display:flex;align-items:center;gap:.6rem;animation:float 4s ease-in-out infinite}
-.hero-chip-1{top:15%;right:2%;animation-delay:0s}
-.hero-chip-2{bottom:20%;left:-2%;animation-delay:1.5s}
-.chip-icon{font-size:1.2rem}
-.chip-label{color:var(--mid);font-size:.62rem;display:block;font-weight:400}
-.deco-star{position:absolute;pointer-events:none;animation:twinkle 3s ease-in-out infinite}
- 
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes twinkle{0%,100%{opacity:.3;transform:scale(1) rotate(0deg)}50%{opacity:1;transform:scale(1.25) rotate(20deg)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes ripple{from{transform:scale(1);opacity:.4}to{transform:scale(1.5);opacity:0}}
-@keyframes pulse-btn{0%,100%{box-shadow:0 8px 36px rgba(217,3,104,.45)}50%{box-shadow:0 8px 50px rgba(217,3,104,.7)}}
- 
-/* TICKER */
-.ticker{background:var(--plum);padding:.9rem 0;overflow:hidden}
-.ticker-track{display:flex;animation:scroll-left 22s linear infinite;white-space:nowrap}
-.ticker-item{display:inline-flex;align-items:center;gap:.8rem;padding:0 2rem;font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.85)}
-.ticker-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
- 
-/* SECTION SYSTEM */
-section{padding:6rem 7vw}
-.section-header{text-align:center;margin-bottom:4rem}
-.section-header .overline{font-size:.62rem;font-weight:700;letter-spacing:.45em;text-transform:uppercase;color:var(--fuchsia);display:block;margin-bottom:.7rem}
-.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);color:var(--plum);line-height:1.15}
-.section-header h2 em{font-style:italic;color:var(--fuchsia)}
-.section-header p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--mid);max-width:520px;margin:1rem auto 0;line-height:1.7}
- 
-/* CARDS */
-#servicios{background:#fff}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
-.card{position:relative;background:var(--cream);border-radius:var(--radius-md);padding:2.6rem 2rem 2.2rem;display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;transition:transform var(--t),box-shadow var(--t);border:1.5px solid rgba(255,182,215,.4)}
-.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--plum),var(--fuchsia))}
-.card.featured{background:linear-gradient(155deg,#fff 55%,var(--blush2));border-color:rgba(217,3,104,.25)}
-.card.featured::before{background:linear-gradient(90deg,var(--fuchsia),var(--gold));height:4px}
-.badge{position:absolute;top:1.4rem;right:1.4rem;background:var(--gold);color:#fff;font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .7rem;border-radius:20px}
-.card-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.4rem;background:linear-gradient(135deg,var(--blush2),rgba(229,172,15,.2))}
-.card-tag{font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
-.card h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--plum);margin-bottom:.35rem;line-height:1.2}
-.card-price{font-size:1.15rem;font-weight:700;color:var(--fuchsia);margin-bottom:.95rem}
-.card p{font-family:'Cormorant Garamond',serif;font-size:1.03rem;line-height:1.75;color:var(--mid);font-weight:300;flex:1}
-.card-perks{margin:1.3rem 0;display:flex;flex-direction:column;gap:.45rem}
-.card-perks li{display:flex;align-items:center;gap:.6rem;font-size:.77rem;color:var(--mid);list-style:none}
-.card-perks li::before{content:'✦';color:var(--gold);font-size:.58rem;flex-shrink:0}
-.btn-book{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:.85rem;border:1.5px solid var(--fuchsia);background:transparent;color:var(--fuchsia);font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius-sm);cursor:pointer;transition:all var(--t);margin-top:1.4rem}
-.btn-book:hover,.card.featured .btn-book{background:var(--fuchsia);color:#fff;box-shadow:0 8px 28px rgba(217,3,104,.3);transform:translateY(-2px)}
-.card.featured .btn-book:hover{background:var(--plum);border-color:var(--plum)}
- 
-/* PROCESS */
-#proceso{background:var(--cream)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2rem;max-width:900px;margin:0 auto;position:relative}
-.steps::before{content:'';position:absolute;top:2.1rem;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--blush),transparent)}
-.step{text-align:center;display:flex;flex-direction:column;align-items:center;gap:.9rem;position:relative;z-index:1}
-.step-num{width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid var(--blush);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--fuchsia);box-shadow:var(--shadow-sm)}
-.step h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--plum)}
-.step p{font-size:.8rem;color:var(--mid);line-height:1.6}
- 
-/* GALLERY */
-#galeria{background:var(--dark);padding:6rem 0 0}
-#galeria .section-header{padding:0 7vw 3rem}
-#galeria .section-header h2{color:#fff}
-#galeria .section-header h2 em{color:var(--blush)}
-#galeria .section-header p{color:rgba(255,255,255,.6)}
-#galeria .overline{color:var(--blush)}
-.gallery-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  gap: 20px;
-  padding: 0 5px 5px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.gal-item {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
-  min-height: 320px;
-  overflow: hidden;
-  border-radius: 8px;
-  background: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.gal-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.gal-item{border-radius:8px;overflow:hidden;position:relative;cursor:pointer;transition:transform var(--t),box-shadow var(--t)}
-.gal-item:hover{transform:scale(1.025);z-index:2;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.gal-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;opacity:.2}
-.gal-label{position:absolute;bottom:.8rem;left:1rem;z-index:2;font-size:.58rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.9);opacity:0;transform:translateY(6px);transition:all var(--t)}
-.gal-item:hover .gal-label{opacity:1;transform:translateY(0)}
-.gallery-cta{text-align:center;padding:2.5rem 1rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
- 
-/* TESTIMONIALS */
-#testimonios{background:#fff}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
-.testi{background:var(--cream);border-radius:var(--radius-md);padding:2rem;border:1.5px solid rgba(255,182,215,.4);position:relative;transition:transform var(--t),box-shadow var(--t)}
-.testi:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.testi::before{content:'"';font-family:'Playfair Display',serif;font-size:5.5rem;color:var(--blush);line-height:1;position:absolute;top:-.4rem;left:1.1rem;opacity:.5}
-.testi-stars{color:var(--gold);font-size:.88rem;margin-bottom:.75rem}
-.testi p{font-family:'Cormorant Garamond',serif;font-size:1.03rem;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:1.4rem}
-.testi-author{display:flex;align-items:center;gap:.75rem}
-.author-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--fuchsia));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.82rem;flex-shrink:0}
-.author-name{font-weight:600;font-size:.83rem;color:var(--plum)}
-.author-event{font-size:.7rem;color:var(--mid)}
-.reviews-cta{text-align:center;margin-top:2rem}
- 
-/* CTA BANNER */
-#cta-banner{background:linear-gradient(135deg,var(--plum) 0%,var(--fuchsia) 100%);padding:6rem 7vw;text-align:center;position:relative;overflow:hidden}
-#cta-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L32 28 L55 30 L32 32 L30 55 L28 32 L5 30 L28 28 Z' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E") repeat;pointer-events:none}
-#cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,4rem);color:#fff;line-height:1.1;margin-bottom:1rem;position:relative}
-#cta-banner h2 em{font-style:italic;color:var(--gold-lt)}
-#cta-banner p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 2.5rem;position:relative}
-.btn-cta-white{display:inline-flex;align-items:center;gap:.6rem;padding:1.1rem 2.8rem;background:#fff;color:var(--fuchsia);font-size:.74rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius-sm);transition:all var(--t);box-shadow:0 8px 40px rgba(0,0,0,.2);position:relative}
-.btn-cta-white:hover{background:var(--gold);color:#fff;transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.3)}
- 
-/* FAQ */
-#faq{background:var(--cream)}
-.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem}
-.faq-item{background:#fff;border-radius:var(--radius-md);border:1.5px solid rgba(255,182,215,.4);overflow:hidden;transition:box-shadow var(--t)}
-.faq-item:hover{box-shadow:var(--shadow-sm)}
-.faq-q{width:100%;background:none;border:none;padding:1.3rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;color:var(--plum);text-align:left}
-.faq-arrow{width:27px;height:27px;border-radius:50%;border:1.5px solid var(--blush);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform var(--t),background var(--t),border-color var(--t);color:var(--fuchsia);font-size:.8rem}
-.faq-item.open .faq-arrow{transform:rotate(45deg);background:var(--fuchsia);border-color:var(--fuchsia);color:#fff}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 1.5rem;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--mid);line-height:1.7}
-.faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.3rem}
- 
-/* BOOKING */
-#agendar{background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:6rem 7vw}
-.contact-info h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--plum);line-height:1.2;margin-bottom:1rem}
-.contact-info h2 em{font-style:italic;color:var(--fuchsia)}
-.contact-info>p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem}
-.contact-detail{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;font-size:.83rem;color:var(--mid)}
-.contact-detail strong{color:var(--plum);font-weight:600}
-.contact-detail .icon{width:36px;height:36px;border-radius:10px;background:var(--blush2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.booking-form{
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: 2.8rem 2.2rem 2.2rem 2.2rem;
-  border: 2.5px solid #f7e9b0;
-  box-shadow: 0 8px 32px rgba(217,3,104,.10);
-  max-width: 480px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-.booking-form h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--plum);margin-bottom:.3rem}
-.form-sub{font-size:.78rem;color:var(--mid);margin-bottom:1.8rem}
-.booking-cta-copy{font-size:.82rem;color:var(--mid);margin:-.3rem 0 .9rem;line-height:1.6}
-.booking-actions{display:flex;flex-direction:column;gap:.85rem}
-.form-row{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  margin-bottom: 1.2rem;
-}
-.form-group{
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
-  margin-bottom: 1.1rem;
-}
-.form-group label{
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #820263;
-  margin-bottom: .2rem;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  background: #fff;
-  border: 1.5px solid #f7e9b0;
-  border-radius: var(--radius-md);
-  padding: .82rem 1.1rem;
-  font-family: 'DM Sans',sans-serif;
-  font-size: .97rem;
-  color: var(--dark);
-  outline: none;
-  transition: border-color var(--t),box-shadow var(--t);
-  appearance: none;
-  margin-top: .1rem;
-  margin-bottom: .1rem;
-  box-shadow: 0 2px 12px rgba(130,2,99,.04);
-  font-weight: 400;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--fuchsia);
-  box-shadow: 0 0 0 3px #D9036822;
-}
-.form-group textarea{
-  resize: vertical;
-  min-height: 85px;
-  max-height: 220px;
-}
-.form-submit{
-  width: 100%;
-  padding: 1.1rem;
-  background: var(--fuchsia);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-md);
-  font-family: 'DM Sans',sans-serif;
-  font-size: .92rem;
-  font-weight: 700;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background var(--t),transform var(--t),box-shadow var(--t);
-  box-shadow: 0 8px 32px rgba(217,3,104,.18);
-  margin-top: .7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .7rem;
-  margin-bottom: .2rem;
-}
-.form-submit:hover{
-  background: var(--plum);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-.form-success{display:none;text-align:center;padding:2rem}
-.form-success .success-icon{font-size:3rem;margin-bottom:1rem}
-.form-success h4{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--plum);margin-bottom:.5rem}
-.form-success p{color:var(--mid);font-size:.86rem}
- 
-/* FOOTER */
-footer{background:var(--dark);padding:4rem 7vw 2rem;color:rgba(255,255,255,.6)}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2rem}
-.footer-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:2rem;color:#fff;display:block;margin-bottom:.4rem}
-.footer-logo span{font-style:normal;font-weight:700}
-.footer-tagline{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--blush);margin-bottom:1.1rem}
-.footer-desc{font-size:.83rem;line-height:1.7;max-width:280px}
-.footer-social{display:flex;gap:.7rem;margin-top:1.4rem}
-.social-btn{width:37px;height:37px;border-radius:10px;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);text-decoration:none;font-size:.88rem;transition:all var(--t)}
-.social-btn:hover{background:var(--fuchsia);border-color:var(--fuchsia);color:#fff;transform:translateY(-2px)}
-.footer-col h5{font-size:.63rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:1.1rem}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:.55rem}
-.footer-col ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.81rem;transition:color var(--t)}
-.footer-col ul li a:hover{color:var(--blush)}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;font-size:.7rem;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:.5rem}
- 
-/* FAB */
-.fab{position:fixed;bottom:2rem;right:2rem;z-index:90;display:flex;flex-direction:column;align-items:flex-end;gap:.6rem}
-.fab-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.82rem 1.4rem;background:var(--fuchsia);color:#fff;border-radius:40px;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;box-shadow:0 8px 36px rgba(217,3,104,.45);transition:all var(--t);animation:pulse-btn 3s ease-in-out infinite;position:relative}
-.fab-btn:hover{background:var(--plum);transform:scale(1.05);animation:none}
-.fab-pulse{position:absolute;inset:0;border-radius:40px;background:var(--fuchsia);animation:ripple 2s ease-out infinite;z-index:-1}
- 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.delay-1{transition-delay:.1s}
-.reveal.delay-2{transition-delay:.2s}
-.reveal.delay-3{transition-delay:.3s}
-.reveal.visible{opacity:1;transform:none}
- 
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .hero{grid-template-columns:1fr;min-height:auto;padding-top:80px}
-  .hero-visual{display:none}
-  .hero-text{padding:3.5rem 1.5rem 3rem}
-  #agendar{grid-template-columns:1fr;gap:2rem;padding:4rem 1.5rem}
-  .footer-top{grid-template-columns:1fr;gap:2rem}
-  .steps::before{display:none}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
-  .gal-item{grid-column:span 1!important;grid-row:span 1!important;height:180px}
-  section{padding:4rem 1.5rem}
-  .form-row{grid-template-columns:1fr}
-}
-</style>
+  <link rel="icon" type="image/png" href="assets/images/hero/favicon.png">
+  <script>
+    (function redirectIdentityTokenToAdmin() {
+      const hash = window.location.hash || '';
+      if (/(invite_token|recovery_token|confirmation_token|email_change_token)=/.test(hash)) {
+        window.location.replace(`${window.location.origin}/admin/${hash}`);
+      }
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
- 
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
- 
-<!-- FAB -->
-<div class="fab">
-  <div class="fab-pulse"></div>
-  <a href="#agendar" class="fab-btn" data-calendly-link>✦ Agendar Cita</a>
-</div>
- 
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-logo">Osiris <span>DAMAS</span></a>
-  <div class="nav-links">
-    <a href="#servicios">Servicios</a>
-    <a href="#galeria">Galería</a>
-    <a href="#testimonios">Reseñas</a>
-    <a href="#faq">FAQ</a>
-    <a href="#agendar" class="nav-cta" data-calendly-link>Agendar Cita</a>
-  </div>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
- 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">Salt Lake City · Utah</p>
-    <h1 class="hero-title">
-      <em>Osiris</em>
-      <strong>DAMAS</strong>
-    </h1>
-    <p class="hero-sub">Maquillaje profesional que realza tu belleza única. Soft Makeup, Full Glam HD y Bridal Makeup para cada momento especial.</p>
-    <div class="hero-actions">
-      <a href="#agendar" class="btn-primary" data-calendly-link>✦ Agendar mi cita</a>
-      <a href="#servicios" class="btn-ghost">Ver servicios</a>
-    </div>
-    <div class="hero-proof">
-      <div class="proof-avatars">
-        <span>A</span><span>M</span><span>S</span><span>L</span>
+  <header class="site-header" id="top">
+    <nav class="nav-shell" id="nav">
+      <a class="brand" href="#top" aria-label="Renne Cerón Microblading">
+        <img src="assets/images/hero/Logo.png" alt="Renne Cerón Microblading">
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#paises">Países</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#galeria">Galería</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+        <a class="nav-whatsapp" href="https://wa.me/527714652450" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
-      <div class="proof-text">
-        <span class="proof-stars">★★★★★</span>
-        <strong>más de 20 clientas satisfechas</strong><br>
-        en bodas, graduaciones y eventos
-      </div>
-    </div>
-  </div>
- 
-  <div class="hero-visual">
-    <svg class="deco-star" style="position:absolute;top:18%;left:6%;width:30px;animation-delay:0s" viewBox="0 0 32 32"><path d="M16 2l1.5 12.5L30 16l-12.5 1.5L16 30l-1.5-12.5L2 16l12.5-1.5Z" fill="#E5AC0F" opacity=".8"/></svg>
-    <svg class="deco-star" style="position:absolute;top:62%;right:5%;width:20px;animation-delay:1.2s" viewBox="0 0 32 32"><path d="M16 2l1.5 12.5L30 16l-12.5 1.5L16 30l-1.5-12.5L2 16l12.5-1.5Z" fill="#FFB6D7" opacity=".9"/></svg>
-    <svg class="deco-star" style="position:absolute;bottom:22%;left:10%;width:16px;animation-delay:.6s" viewBox="0 0 32 32"><path d="M16 2l1.5 12.5L30 16l-12.5 1.5L16 30l-1.5-12.5L2 16l12.5-1.5Z" fill="#D90368" opacity=".5"/></svg>
-    <div style="position:relative">
-      <div class="hero-img-main">
-        <img src="assets/hero.jpeg" alt="Osiris Damas" style="width:100%;height:100%;object-fit:cover;display:block;" />
-      </div>
-      <div class="hero-chip hero-chip-1">
-        <img src="assets/icons/1.png" alt="Bridal Makeup Icon" class="chip-icon" style="width:1.6rem;height:1.6rem;object-fit:cover;border-radius:50%;" />
-        <div><strong style="color:var(--plum);font-size:.76rem">Bridal Makeup</strong><span class="chip-label">Larga duración</span></div>
-      </div>
-      <div class="hero-chip hero-chip-2">
-        <span class="chip-icon" style="font-size:1.6rem;line-height:1">⭐</span>
-        <div><strong style="color:var(--plum);font-size:.76rem">5 estrellas</strong><span class="chip-label">+20 reseñas</span></div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span>Soft Makeup</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Full Glam HD</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Bridal Makeup</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Novias</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Graduaciones</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Prom</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Eventos Especiales</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Osiris Damas</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Soft Makeup</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Full Glam HD</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Bridal Makeup</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Novias</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Graduaciones</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Prom</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Eventos Especiales</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Osiris Damas</span>
-  </div>
-</div>
- 
-<!-- SERVICIOS -->
-<section id="servicios">
-  <div class="section-header reveal">
-    <span class="overline">Servicios</span>
-    <h2>Elige entre <em>tres tipos</em> de maquillaje</h2>
-    <p>Cada look diseñado para ti, tu piel, tu evento y tu esencia.</p>
-  </div>`
-  <div class="cards" id="services-list"></div>
-</section>
- 
-<!-- PROCESO -->
-<section id="proceso">
-  <div class="section-header reveal">
-    <span class="overline">Proceso</span>
-    <h2>Tu cita en <em>4 pasos</em></h2>
-    <p>Simple, personalizado y sin estrés.</p>
-  </div>
-  <div class="steps">
-    <div class="step reveal delay-1">
-      <div class="step-num">1</div>
-      <h4>Elige tu servicio</h4>
-      <p>Soft Makeup, Full Glam HD o Bridal Makeup. Te orientamos para elegir el ideal.</p>
-    </div>
-    <div class="step reveal delay-2">
-      <div class="step-num">2</div>
-      <h4>Agenda tu cita</h4>
-      <p>Llena el formulario o escríbenos por WhatsApp y confirmamos.</p>
-    </div>
-    <div class="step reveal delay-3">
-      <div class="step-num">3</div>
-      <h4>Tu sesión</h4>
-      <p>Relájate mientras creamos tu look con productos premium.</p>
-    </div>
-    <div class="step reveal" style="transition-delay:.4s">
-      <div class="step-num">4</div>
-      <h4>¡Luce increíble!</h4>
-      <p>Sale lista para brillar. ¡Foto obligatoria para la galería! 💕</p>
-    </div>
-  </div>
-</section>
- 
-<!-- GALERÍA -->
-<section id="galeria">
-  <div class="section-header reveal">
-    <span class="overline">Galería</span>
-    <h2>Trabajos <em>reales</em>, clientas reales</h2>
-    <p>Cada look es único, cada mujer es especial.</p>
-  </div>
-      <div class="gallery-grid" id="gallery-list"></div>
-  <div class="gallery-cta">
-    <a href="https://instagram.com/osirisdamas.mua" target="_blank" class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Ver más en Instagram →</a>
-    <a href="#agendar" class="btn-primary" data-calendly-link>✦ Quiero mi look</a>
-  </div>
-</section>
- 
-<!-- TESTIMONIOS -->
-<section id="testimonios">
-  <div class="section-header reveal">
-    <span class="overline">Google Reviews</span>
-    <h2>Lo que dicen en <em>Google</em></h2>
-    <p>Esta sección también se puede actualizar desde un solo archivo de contenido.</p>
-  </div>
-  <div class="testi-grid" id="reviews-list"></div>
-  <div class="reviews-cta" id="google-reviews-cta" style="display:none">
-    <a id="google-reviews-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-ghost">Ver todas en Google</a>
-  </div>
-</section>
- 
-<!-- CTA BANNER -->
-<section id="cta-banner">
-  <h2>¿Lista para <em>brillar</em>?</h2>
-  <p>Agenda tu cita hoy y asegura tu fecha antes de que se llene el calendario.</p>
-  <a href="#agendar" class="btn-cta-white" data-calendly-link>✦ Agendar mi cita ahora</a>
-</section>
- 
-<!-- FAQ -->
-<section id="faq">
-  <div class="section-header reveal">
-    <span class="overline">Preguntas frecuentes</span>
-    <h2>Todo lo que necesitas <em>saber</em></h2>
-  </div>
-  <div class="faq-list">
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Con cuánta anticipación debo agendar mi cita?<span class="faq-arrow">+</span></button><div class="faq-a">Se recomienda agendar con al menos 2–4 semanas de anticipación, especialmente para bodas, prom o graduaciones. Los fines de semana se agotan rápido.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuál tipo de maquillaje es el mejor para mi boda?<span class="faq-arrow">+</span></button><div class="faq-a">Bridal Makeup es la opción ideal para novias que buscan un look elegante, personalizado y de larga duración. Evaluamos juntas tu piel, tu estilo y el tipo de evento para darte la mejor recomendación.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Hacen prueba de maquillaje para bodas?<span class="faq-arrow">+</span></button><div class="faq-a">¡Sí! Las pruebas de maquillaje para novias están disponibles como servicio aparte. Es muy recomendable hacerla 1–2 semanas antes del evento.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Cuánto dura una sesión de maquillaje?<span class="faq-arrow">+</span></button><div class="faq-a">Soft Makeup: aprox. 45 min. Full Glam HD: 60–75 min. Bridal Makeup: 75–90 min. Para novias se reserva tiempo extra para garantizar un resultado perfecto.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Tienen servicio a domicilio?<span class="faq-arrow">+</span></button><div class="faq-a">Sí, ofrecemos servicio a domicilio en Salt Lake City y áreas cercanas. Puede aplicar un cargo adicional según la distancia. Consúltanos al agendar.</div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">¿Qué métodos de pago aceptan?<span class="faq-arrow">+</span></button><div class="faq-a">Aceptamos efectivo, Venmo, Zelle y tarjetas de crédito/débito. Se requiere depósito para confirmar en fechas especiales y temporada alta.</div></div>
-  </div>
-</section>
- 
-<!-- AGENDAR -->
-<section id="agendar">
-  <div class="contact-info reveal">
-    <span style="font-size:.62rem;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--fuchsia)">Agenda tu cita</span>
-    <h2 style="margin-top:.6rem">Hablemos y creemos<br>tu <em>look perfecto</em></h2>
-    <p>Agenda por Calendly o contáctame directamente. Respondo en menos de 24 horas.</p>
-    <div class="contact-detail"><div class="icon">📍</div><div><strong>Ubicación</strong><br>Salt Lake City, Utah</div></div>
-    <div class="contact-detail"><div class="icon">📱</div><div><strong>WhatsApp</strong><br>(801) 885-6188</div></div>
-    <div class="contact-detail"><div class="icon">✉️</div><div><strong>Correo</strong><br><a href="mailto:Osirisdamas.mua@gmail.com" style="color:inherit;text-decoration:none">Osirisdamas.mua@gmail.com</a></div></div>
-    <div class="contact-detail"><div class="icon">📸</div><div><strong>Instagram</strong><br>@osirisdamas.mua</div></div>
-    <div class="contact-detail"><div class="icon">🕐</div><div><strong>Horario</strong><br>Lunes – Sábado · 9am – 7pm</div></div>
-  </div>
- 
-  <div class="booking-form reveal delay-2">
-    <h3>Reserva Tu Cita</h3>
-    <p class="form-sub">Elige el horario que mejor te funcione y agenda directamente en Calendly.</p>
-    <div class="booking-actions">
-      <a href="#agendar" class="btn-primary" data-calendly-link style="justify-content:center">✦ Reservar por Calendly</a>
-      <a href="https://wa.me/18018856188" target="_blank" rel="noopener noreferrer" class="btn-ghost" style="justify-content:center">WhatsApp: +1 (801) 885-6188</a>
-    </div>
-    <p class="booking-cta-copy">Si tu clienta necesita ayuda antes de reservar, también puede escribir a <a href="mailto:Osirisdamas.mua@gmail.com" style="color:var(--fuchsia);text-decoration:none;font-weight:600">Osirisdamas.mua@gmail.com</a> o por WhatsApp.</p>
-  </div>
-</section>
- 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <span class="footer-logo">Osiris <span>DAMAS</span></span>
-      <p class="footer-tagline">Makeup Artist · Salt Lake City, Utah</p>
-      <p class="footer-desc">Maquillaje profesional que realza tu belleza única. Especializada en novias, graduaciones, prom y eventos especiales en Utah.</p>
-      <div class="footer-social">
-        <a href="https://instagram.com/osirisdamas.mua" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">📸</a>
-        <a href="#" class="social-btn" aria-label="TikTok">🎵</a>
-        <a href="https://wa.me/18018856188" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">💬</a>
-        <a href="#" class="social-btn" aria-label="Facebook">👤</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h5>Servicios</h5>
-      <ul>
-        <li><a href="#servicios">Soft Makeup</a></li>
-        <li><a href="#servicios">Full Glam HD</a></li>
-        <li><a href="#servicios">Bridal Makeup</a></li>
-        <li><a href="#agendar">Prueba de novias</a></li>
-        <li><a href="#agendar">Servicio a domicilio</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Navegación</h5>
-      <ul>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#proceso">Cómo funciona</a></li>
-        <li><a href="#testimonios">Reseñas</a></li>
-        <li><a href="#faq">Preguntas frecuentes</a></li>
-        <li><a href="#agendar">Agendar cita</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Osiris Damas Makeup Artist · Salt Lake City, Utah</span>
-    <span>Hecho con 💕 para cada clienta especial</span>
-  </div>
-</footer>
- 
-<script>
-const fallbackSiteContent={
-  calendlyUrl:'https://calendly.com/osirisdamas-mua/30min',
-  services:[
-    {
-      icon:'assets/icons/3.png',
-      iconAlt:'Soft Makeup Icon',
-      tag:'Natural · Fresco · Luminoso',
-      title:'🌸 Soft Makeup',
-      price:'$110',
-      description:'Un maquillaje fresco y natural que realza tu belleza sin ocultarla. Perfecto para quienes aman una piel luminosa, ligera y elegante.',
-      perks:['Acabado natural y luminoso','Sensación ligera en la piel','Ideal para piel madura'],
-      buttonText:'✦ Reservar Soft Makeup',
-      featured:false
-    },
-    {
-      icon:'assets/icons/4.png',
-      iconAlt:'Full Glam HD Icon',
-      tag:'Glam · Sofisticado · HD',
-      title:'🥂 Full Glam HD',
-      price:'$135',
-      description:'Un look glamuroso y sofisticado diseñado para destacar tus facciones y lucir impecable tanto en persona como en fotografías.',
-      perks:['Cobertura personalizable','Perfecto para fotos y video HD','Técnicas adaptadas para piel madura'],
-      buttonText:'✦ Reservar Full Glam HD',
-      featured:true,
-      badge:'Más popular'
-    },
-    {
-      icon:'assets/icons/5.png',
-      iconAlt:'Bridal Makeup Icon',
-      tag:'Novias · Elegante · Personalizado',
-      title:'👰 Bridal Makeup',
-      price:'$195',
-      description:'Un servicio personalizado para novias que desean verse radiantes, elegantes y seguras en uno de los días más importantes de su vida.',
-      perks:['Consulta personalizada','Larga duración para todo el evento','Diseñado para lucir impecable en persona y en fotografía'],
-      buttonText:'✦ Reservar Bridal Makeup',
-      featured:false
-    }
-  ],
-  gallery:[
-    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02.jpeg',alt:'Maquillaje look 1',label:'Look 1'},
-    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%281%29.jpeg',alt:'Maquillaje look 2',label:'Look 2'},
-    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%282%29.jpeg',alt:'Maquillaje look 3',label:'Look 3'},
-    {src:'assets/WhatsApp%20Image%202026-05-28%20at%2021.22.02%20%283%29.jpeg',alt:'Maquillaje look 4',label:'Look 4'}
-  ],
-  googleReviews:{
-    placeUrl:'https://www.google.com/search?kgmid=/g/11z525j580&hl=en-US&q=Osiris+Damas+Makeup+Artist&shem=rimspwouoe&shndl=30&source=sh/x/loc/osrp/m1/3&kgs=6ea10d3c159eecc1&utm_source=rimspwouoe,sh/x/loc/osrp/m1/3#lrd=0x874d7fe53f47efe9:0x83ba9cce7504bb18,1,,,,',
-    items:[
-      {name:'Andrea Mejía',initials:'A',event:'Boda · Bridal Makeup',text:'Osiris es increíble. Me hizo el maquillaje para mi boda y duró todo el día y la noche. Lloré de felicidad y ni se corrió. ¡La recomiendo al 100%!'},
-      {name:'Sofía Rodríguez',initials:'S',event:'Prom · Full Glam HD',text:'Me hizo el maquillaje para mi prom y quedé hermosísima. Todos me preguntaban quién me maquilló. Definitivamente vuelvo para mi graduación.'},
-      {name:'María Fernández',initials:'M',event:'Sesión fotos · Soft Makeup',text:'Pedí el Soft Makeup para una sesión de fotos y quedé enamorada. Natural pero impactante. Osiris tiene un talento increíble.'}
-    ]
-  }
-};
+    </nav>
+  </header>
 
-let siteContent=JSON.parse(JSON.stringify(fallbackSiteContent));
-let calendlyHref=fallbackSiteContent.calendlyUrl;
+  <main>
+    <section class="hero-section">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Microblading premium</span>
+        <h1>Despierta <em>perfecta</em>,<br>cada día.</h1>
+        <p>Microblading y diseño de cejas perfecto para ti, con detalle personalizado pensado para resaltar tu mirada todos los días.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#reserva" data-calendly-link>Reservar aquí</a>
+          <a class="button button-outline" href="#galeria">Ver galería</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/images/hero/hero.png" alt="Procedimiento de microblading en primer plano">
+      </div>
+    </section>
 
-function renderServices(){
-  const target=document.getElementById('services-list');
-  if(!target)return;
-  target.innerHTML=siteContent.services.map((service,index)=>`
-    <div class="card ${service.featured?'featured':''} visible">
-      ${service.badge?`<span class="badge">${service.badge}</span>`:''}
-      <div class="card-icon"><img src="${service.icon}" alt="${service.iconAlt}" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" /></div>
-      <p class="card-tag">${service.tag}</p>
-      <h3>${service.title}</h3>
-      <div class="card-price">${service.price}</div>
-      <p>${service.description}</p>
-      <ul class="card-perks">
-        ${service.perks.map(perk=>`<li>${perk}</li>`).join('')}
-      </ul>
-      <a class="btn-book" href="${calendlyHref}" target="_blank" rel="noopener noreferrer">${service.buttonText}</a>
-    </div>
-  `).join('');
-}
+    <section class="section section-ivory" id="servicios">
+      <div class="section-heading reveal">
+        <span class="eyebrow eyebrow-soft">Servicios</span>
+        <h2>La técnica perfecta<br><em>para ti</em></h2>
+      </div>
+      <div class="services-showcase">
+        <div class="services-tabs" id="services-tabs"></div>
+        <article class="service-card reveal reveal-left" id="service-feature"></article>
+        <div class="service-image-frame reveal reveal-right">
+          <img id="service-feature-image" src="assets/images/gallery/11251.jpg" alt="Resultado del servicio destacado">
+        </div>
+      </div>
+    </section>
 
-function renderGallery(){
-  const target=document.getElementById('gallery-list');
-  if(!target)return;
-  target.innerHTML=siteContent.gallery.map(item=>`
-    <div class="gal-item">
-      <img src="${item.src}" alt="${item.alt}" style="width:100%;height:100%;object-fit:cover;display:block;">
-      <span class="gal-label">${item.label}</span>
-    </div>
-  `).join('');
-}
+    <section class="section section-sand" id="paises">
+      <div class="section-heading reveal section-heading-left">
+        <span class="eyebrow eyebrow-soft">Presencia internacional</span>
+        <h2>Tours por <em>4 países</em></h2>
+      </div>
+      <div class="countries-grid" id="countries-grid">
+        <article class="country-card reveal" style="--reveal-delay: 0ms;">
+          <img src="assets/images/gallery/usa-flag.png" alt="Bandera de Estados Unidos">
+          <div>
+            <h3>Estados Unidos</h3>
+            <p>Las Vegas · Arizona · Salt Lake City</p>
+          </div>
+        </article>
+        <article class="country-card reveal" style="--reveal-delay: 90ms;">
+          <img src="assets/images/gallery/mexico-flag.png" alt="Bandera de México">
+          <div>
+            <h3>México</h3>
+            <p>CDMX · Guadalajara · Morelia · Cancún</p>
+          </div>
+        </article>
+        <article class="country-card reveal" style="--reveal-delay: 180ms;">
+          <img src="assets/images/gallery/guatemala-flag.webp" alt="Bandera de Guatemala">
+          <div>
+            <h3>Guatemala</h3>
+            <p>Ciudad de Guatemala · Quetzaltenango</p>
+          </div>
+        </article>
+        <article class="country-card reveal" style="--reveal-delay: 270ms;">
+          <img src="assets/images/gallery/salvador-flag.jpg" alt="Bandera de El Salvador">
+          <div>
+            <h3>El Salvador</h3>
+            <p>San Salvador · Santa Ana · San Miguel</p>
+          </div>
+        </article>
+      </div>
+      <div class="cities-banner reveal" style="--reveal-delay: 120ms;">
+        <div>
+          <strong>¿Vives en otra ciudad?</strong>
+          <p>Escríbenos y confirma próximas fechas, ciudades y disponibilidad para tu cita.</p>
+        </div>
+        <a class="button button-gold" href="#reserva">Consultar</a>
+      </div>
+    </section>
 
-function renderReviews(){
-  const target=document.getElementById('reviews-list');
-  const cta=document.getElementById('google-reviews-cta');
-  const link=document.getElementById('google-reviews-link');
-  const reviewItems=siteContent.googleReviews&&siteContent.googleReviews.items?siteContent.googleReviews.items:[];
-  if(!target)return;
-  target.innerHTML=reviewItems.map((review,index)=>`
-    <div class="testi visible">
-      <div class="testi-stars">★★★★★</div>
-      <p>${review.text}</p>
-      <div class="testi-author">
-        <div class="author-avatar">${review.initials}</div>
-        <div><div class="author-name">${review.name}</div><div class="author-event">${review.event}</div></div>
+    <section class="section section-ivory" id="proceso">
+      <div class="section-heading reveal">
+        <span class="eyebrow eyebrow-soft">Tu experiencia</span>
+        <h2>Así funciona el <em>proceso</em></h2>
+      </div>
+      <div class="process-grid">
+        <article class="process-card reveal" style="--reveal-delay: 0ms;">
+          <span class="process-index">01</span>
+          <h3>Consulta & Diseño</h3>
+          <p>Analizamos tu rostro, tus facciones y el resultado que buscas para crear un diseño a tu medida.</p>
+        </article>
+        <article class="process-card reveal" style="--reveal-delay: 100ms;">
+          <span class="process-index">02</span>
+          <h3>Procedimiento</h3>
+          <p>Aplicamos la técnica elegida con simetría precisa, pigmentación profesional y un acabado limpio.</p>
+        </article>
+        <article class="process-card reveal" style="--reveal-delay: 200ms;">
+          <span class="process-index">03</span>
+          <h3>Plan de Retoque</h3>
+          <p>Te guiamos con cuidados posteriores y seguimiento para mantener y perfeccionar el resultado.</p>
+        </article>
+      </div>
+      <div class="process-note reveal">
+        <span>Nota importante</span>
+        <p>Cada diseño se personaliza según tu piel, la forma natural de tus cejas y la intensidad final que deseas lograr.</p>
+      </div>
+    </section>
+
+    <section class="section section-ivory" id="galeria">
+      <div class="section-heading reveal section-heading-split">
+        <div>
+          <span class="eyebrow eyebrow-soft">Resultados reales</span>
+          <h2>Nuestra <em>galería</em></h2>
+        </div>
+        <a class="section-link" href="https://www.instagram.com/renneceronjb?fbclid=IwY2xjawSnAxdleHRuA2FlbQIxMABicmlkETFTNlNFck1JWDdadHpXTmFwc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHjqY0rmSM4Fl6mWbwKaRd-tC-0O2sPUNNHnJ9lB0Hw8Nw5_sMLIj9sotOGMg_aem_o_LYbpQHbrD9J9K48PFKxw" target="_blank" rel="noopener noreferrer">Ver más en Instagram</a>
+      </div>
+      <div class="gallery-mosaic" id="gallery-list"></div>
+    </section>
+
+    <section class="section section-dark" id="resenas">
+      <div class="section-heading reveal">
+        <span class="eyebrow eyebrow-dark">Lo que dicen mis clientas</span>
+        <h2>Resultados que <em>enamoran</em></h2>
+      </div>
+      <div class="reviews-grid" id="reviews-list"></div>
+    </section>
+
+    <section class="section section-ivory" id="sobre-mi">
+      <div class="about-layout">
+        <div class="about-image reveal reveal-left">
+          <img src="assets/images/hero/SOBRE-MI.png" alt="Retrato de Renne Cerón">
+        </div>
+        <div class="about-copy reveal reveal-right" style="--reveal-delay: 100ms;">
+          <span class="eyebrow eyebrow-soft">Sobre mí</span>
+          <h2>Tu artista de<br><em>confianza</em></h2>
+          <p>Con años de experiencia perfeccionando diseños de ceja, Renne Cerón ofrece una propuesta limpia, elegante y totalmente personalizada.</p>
+          <p>Su enfoque combina técnica, análisis facial y una experiencia ordenada desde la primera consulta hasta el seguimiento posterior.</p>
+          <div class="about-points">
+            <span>Atención totalmente personalizada</span>
+            <span>Diseños naturales y balanceados</span>
+            <span>Técnica premium y simetría precisa</span>
+            <span>Agenda por tours internacionales</span>
+          </div>
+          <a class="button button-outline-dark" href="#reserva">Conocer más</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-ivory section-compact" id="contacto">
+      <div class="contact-strip">
+        <div>
+          <span class="eyebrow eyebrow-soft">Social</span>
+          <h2>Encuéntrame en redes</h2>
+          <p>Comparte resultados, nuevas fechas y atención directa por mis canales oficiales.</p>
+        </div>
+        <div class="social-links">
+          <a class="reveal" style="--reveal-delay: 0ms;" href="https://www.instagram.com/renneceronjb?fbclid=IwY2xjawSnAxdleHRuA2FlbQIxMABicmlkETFTNlNFck1JWDdadHpXTmFwc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHjqY0rmSM4Fl6mWbwKaRd-tC-0O2sPUNNHnJ9lB0Hw8Nw5_sMLIj9sotOGMg_aem_o_LYbpQHbrD9J9K48PFKxw" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon social-instagram" aria-hidden="true">
+              <span class="social-icon-inner social-icon-inner-instagram">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="4" width="16" height="16" rx="4.5" stroke="currentColor" stroke-width="2"></rect>
+                  <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"></circle>
+                  <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"></circle>
+                </svg>
+              </span>
+            </span>
+            <div>
+              <strong>Instagram</strong>
+              <span>@renneceronjb</span>
+            </div>
+          </a>
+          <a class="reveal" style="--reveal-delay: 90ms;" href="https://www.facebook.com/profile.php?id=100063635777988&rdid=7El9kgGio8yRuEhs&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1H3XXTKYGD%2F#" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon social-facebook" aria-hidden="true">
+              <span class="social-icon-inner social-icon-inner-facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.35 20V13.1h2.32l.35-2.7h-2.67V8.67c0-.78.21-1.31 1.33-1.31h1.42V4.95c-.25-.03-1.08-.1-2.05-.1-2.03 0-3.42 1.24-3.42 3.52v2.03H8.4v2.7h2.23V20h2.72Z"></path>
+                </svg>
+              </span>
+            </span>
+            <div>
+              <strong>Facebook</strong>
+              <span>Facebook oficial</span>
+            </div>
+          </a>
+          <a class="reveal" style="--reveal-delay: 180ms;" href="https://wa.me/527714652450" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon social-whatsapp" aria-hidden="true">
+              <span class="social-icon-inner social-icon-inner-whatsapp">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 4.5a7.3 7.3 0 0 0-6.27 11.02L5 19.5l4.12-1.08A7.5 7.5 0 0 0 12 19c4.14 0 7.5-3.23 7.5-7.25S16.14 4.5 12 4.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                  <path d="M9.74 8.85c.1-.22.2-.22.39-.23h.34c.11 0 .3-.04.47.33.18.37.59 1.3.64 1.4.06.1.08.21.02.33-.06.11-.1.2-.2.3-.1.12-.2.25-.29.34-.09.1-.18.2-.08.4.1.18.47.84 1.02 1.36.71.66 1.31.87 1.5.97.18.08.29.07.4-.05.1-.12.44-.54.56-.72.12-.18.23-.15.39-.09.16.06.98.46 1.15.54.17.09.28.13.32.21.04.08.04.47-.1.9-.14.42-.82.82-1.13.87-.3.04-.67.08-1.08-.06a5.6 5.6 0 0 1-1-.37c-1.77-.77-2.92-2.62-3-2.74-.09-.12-.72-1.03-.72-1.95 0-.91.45-1.3.61-1.54Z" fill="currentColor"></path>
+                </svg>
+              </span>
+            </span>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>+52 771 465 2450</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta" id="reserva">
+      <div class="cta-block reveal">
+        <span class="eyebrow eyebrow-dark">Agenda hoy</span>
+        <h2>Reserva tu cita<br><em>ahora mismo</em></h2>
+        <p>Las citas cambian según ciudad y temporada. Reserva desde WhatsApp o abre el calendario para asegurar tu lugar.</p>
+        <div class="cta-actions">
+          <a class="button button-gold" href="#reserva" data-calendly-link>Reservar</a>
+          <a class="button button-dark-outline" href="https://wa.me/527714652450" target="_blank" rel="noopener noreferrer">Hablar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Renne Cerón</h3>
+        <p>Arte de cejas y micropigmentación con atención premium y fechas internacionales.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <a href="#servicios">Servicios</a>
+        <a href="#paises">Países</a>
+        <a href="#galeria">Galería</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="tel:+527714652450">+52 771 465 2450</a>
+        <a href="mailto:renneceronjb@gmail.com">renneceronjb@gmail.com</a>
+        <span>México · USA · Guatemala · El Salvador</span>
       </div>
     </div>
-  `).join('');
-  if(cta&&link&&siteContent.googleReviews&&siteContent.googleReviews.placeUrl){
-    link.href=siteContent.googleReviews.placeUrl;
-    cta.style.display='block';
-  }
-}
+    <div class="footer-bottom">
+      <span>© 2026 Renne Cerón Microblading</span>
+      <span>Experiencia premium en cada cita</span>
+    </div>
+  </footer>
 
-function applyCalendlyLinks(){
-  document.querySelectorAll('[data-calendly-link]').forEach(link=>{
-    link.href=calendlyHref;
-    if(calendlyHref!=='#agendar'){
-      link.target='_blank';
-      link.rel='noopener noreferrer';
-    }
-  });
-}
-
-function initializeEditableContent(){
-  calendlyHref=siteContent.calendlyUrl||'#agendar';
-  renderServices();
-  renderGallery();
-  renderReviews();
-  applyCalendlyLinks();
-}
-
-function fetchJson(path){
-  return fetch(path).then(response=>{
-    if(!response.ok){
-      throw new Error(`Failed to load ${path}`);
-    }
-    return response.json();
-  });
-}
-
-initializeEditableContent();
-
-Promise.allSettled([
-  fetchJson('data/links.json'),
-  fetchJson('data/services.json'),
-  fetchJson('data/gallery.json'),
-  fetchJson('data/reviews.json')
-]).then(([linksResult,servicesResult,galleryResult,reviewsResult])=>{
-  siteContent={
-    calendlyUrl:linksResult.status==='fulfilled' ? (linksResult.value.calendlyUrl||fallbackSiteContent.calendlyUrl) : fallbackSiteContent.calendlyUrl,
-    services:servicesResult.status==='fulfilled' ? (servicesResult.value.services||fallbackSiteContent.services) : fallbackSiteContent.services,
-    gallery:galleryResult.status==='fulfilled' ? (galleryResult.value.gallery||fallbackSiteContent.gallery) : fallbackSiteContent.gallery,
-    googleReviews:{
-      placeUrl:linksResult.status==='fulfilled' ? (linksResult.value.googleReviewsUrl||fallbackSiteContent.googleReviews.placeUrl) : fallbackSiteContent.googleReviews.placeUrl,
-      items:reviewsResult.status==='fulfilled' ? (reviewsResult.value.reviews||fallbackSiteContent.googleReviews.items) : fallbackSiteContent.googleReviews.items
-    }
-  };
-  initializeEditableContent();
-});
-
-// CURSOR
-const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-(function anim(){cursor.style.left=mx+'px';cursor.style.top=my+'px';rx+=(mx-rx)*.15;ry+=(my-ry)*.15;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(anim)})();
- 
-// NAV
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
- 
-// MOBILE MENU
-let menuOpen=false;
-function toggleMenu(){
-  menuOpen=!menuOpen;
-  const l=document.querySelector('.nav-links');
-  l.style.cssText=menuOpen?'display:flex;flex-direction:column;position:fixed;top:65px;right:0;background:#fff;padding:2rem;gap:1.5rem;box-shadow:0 20px 60px rgba(130,2,99,.2);min-width:200px;z-index:99;border-left:3px solid var(--blush)':'display:none';
-}
- 
-// REVEAL
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
- 
-// FAQ
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item'),open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-  if(!open)item.classList.add('open');
-}
- 
-</script>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
  

@@ -1,0 +1,80 @@
+{
+  "services": [
+    {
+    "icon": "assets/images/icons/icon-03.png",
+    "iconAlt": "Microblading Icon",
+    "tag": "Cejas · Definicion · Precision",
+    "title": "Microblading",
+    "price": "Consulta precio",
+    "description": "Tecnica de trazos finos que imita el vello natural para crear cejas definidas, armoniosas y de apariencia elegante.",
+    "perks": [
+      "Diseno personalizado segun tu rostro",
+      "Resultado natural y definido",
+      "Ideal para mejorar simetria"
+    ],
+    "buttonText": "✦ Reservar Microblading",
+    "featured": true,
+    "badge": "Mas solicitado"
+    },
+    {
+    "icon": "assets/images/icons/icon-04.png",
+    "iconAlt": "Microshading Icon",
+    "tag": "Sombreado · Suave · Elegante",
+    "title": "Microshading",
+    "price": "Consulta precio",
+    "description": "Tecnica de sombreado que aporta profundidad y un efecto maquillado delicado para unas cejas suaves y uniformes.",
+    "perks": [
+      "Acabado suave y pulido",
+      "Excelente para mayor intensidad",
+      "Adaptable a distintos estilos"
+    ],
+    "buttonText": "✦ Reservar Microshading",
+    "featured": false
+    },
+    {
+    "icon": "assets/images/icons/icon-05.png",
+    "iconAlt": "Cejas Hibridas Icon",
+    "tag": "Trazos + Sombreado · Balance · Definicion",
+    "title": "Cejas Hibridas",
+    "price": "Consulta precio",
+    "description": "Combinacion de microblading y shading para lograr cejas con textura, profundidad y una forma mas completa.",
+    "perks": [
+      "Combina naturalidad y relleno",
+      "Diseno mas estructurado",
+      "Ideal para cejas con poca densidad"
+    ],
+    "buttonText": "✦ Reservar Cejas Hibridas",
+    "featured": false
+    },
+    {
+    "icon": "assets/images/icons/icon-01.png",
+    "iconAlt": "Hair Stroke Icon",
+    "tag": "Trazo Capilar · Precision · Natural",
+    "title": "Hair Stroke",
+    "price": "Consulta precio",
+    "description": "Tecnica enfocada en crear trazos delicados para un efecto de vello ultranatural y una ceja visualmente mas ligera.",
+    "perks": [
+      "Aspecto fino y detallado",
+      "Diseno realista",
+      "Ideal para resultados sutiles"
+    ],
+    "buttonText": "✦ Reservar Hair Stroke",
+    "featured": false
+    },
+    {
+    "icon": "assets/images/icons/icon-02.png",
+    "iconAlt": "Micropigmentacion Icon",
+    "tag": "Ojos y Labios · Definicion · Color",
+    "title": "Delineado y Labios",
+    "price": "Consulta precio",
+    "description": "Servicios de delineado de ojos y micropigmentacion de labios para resaltar tu expresion con mayor definicion y color.",
+    "perks": [
+      "Realza ojos y contorno labial",
+      "Acabado elegante y duradero",
+      "Disponible segun fecha de tour"
+    ],
+    "buttonText": "✦ Reservar Delineado o Labios",
+    "featured": false
+    }
+  ]
+}

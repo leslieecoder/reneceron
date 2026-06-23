@@ -1,0 +1,22 @@
+{
+  "reviews": [
+    {
+    "name": "Andrea Mejia",
+    "initials": "A",
+    "event": "Microblading",
+    "text": "Me encanto el resultado. Mis cejas quedaron definidas pero naturales, y el proceso fue muy profesional desde el diseno hasta las indicaciones finales."
+    },
+    {
+    "name": "Sofia Rodriguez",
+    "initials": "S",
+    "event": "Microshading",
+    "text": "Reserve en una fecha de tour y todo fue super ordenado. El sombreado quedo suave, elegante y exactamente como lo queria."
+    },
+    {
+    "name": "Maria Fernandez",
+    "initials": "M",
+    "event": "Labios y cejas hibridas",
+    "text": "Me explicaron muy bien cada paso y los cuidados posteriores. El resultado se ve fino, armonioso y realmente mejora todo mi rostro."
+    }
+  ]
+}
